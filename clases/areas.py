@@ -1,6 +1,17 @@
 import math
 
 class CalculadoraAreas:
+    def calcular_area_circulo(self):
+        try:
+            radio = float(input("Introduce el radio del círculo: "))
+            if radio < 0:
+                print("El radio no puede ser negativo.")
+                return
+            area = math.pi * (radio ** 2)
+            self.mostrar_resultado("Círculo", area)
+        except ValueError:
+            print("Entrada no válida. Por favor, introduce un número.")
+
     def calcular_area_triangulo(self):
         try:
             base = float(input("Introduce la base del triángulo: "))
@@ -27,4 +38,3 @@ class CalculadoraAreas:
 
     def mostrar_resultado(self, figura, area):
         print(f"El área del {figura} es: {area:.2f}")
-        
